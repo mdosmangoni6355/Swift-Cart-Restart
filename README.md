@@ -1,143 +1,29 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT (SwiftCart E-Commerce)
+১) null এবং undefined এর মধ্যে পার্থক্য কী?
+জাভাস্ক্রিপ্টে যখন কোনো ভেরিয়েবল ডিক্লেয়ার করা হয় কিন্তু তাতে কোনো মান (value) অ্যাসাইন করা হয় না, তখন তার ডিফল্ট মান হয় undefined। এটি সিস্টেম বা ল্যাঙ্গুয়েজ নিজে সেট করে।
+অন্যদিকে, null হলো একটি ভ্যালু যা ডেভেলপার নিজে কোনো ভেরিয়েবলে অ্যাসাইন করেন। এটি দ্বারা বোঝানো হয় যে ভেরিয়েবলটি এখন খালি বা এতে কোনো মান নেই (intentional absence of object value)।
 
+২) জাভাস্ক্রিপ্টে map() ফাংশনের কাজ কী? forEach() এর সাথে এর পার্থক্য কী?
+map() ফাংশন একটি অ্যারের প্রতিটি উপাদানের (element) উপর একটি ফাংশন চালায় এবং সেই ফলাফলের ভিত্তিতে একটি নতুন অ্যারে তৈরি করে রিটার্ন করে।
+পার্থক্য:
 
-## Repository: Create your own public repository and submit the link.
+map() একটি নতুন অ্যারে রিটার্ন করে।
 
----
-## 🛍️ API Endpoints
----
-1. Get 🛍️ All Products
-```bash
-https://fakestoreapi.com/products
-```
+forEach() কোনো কিছু রিটার্ন করে না (undefined রিটার্ন করে)। এটি শুধু অ্যারের প্রতিটি উপাদানের উপর লুপ চালায় বা নির্দিষ্ট কাজ (side effect) করে।
 
-2. Get 🛍️ All Categories
-```bash
-https://fakestoreapi.com/products/categories
-```
+৩) == এবং === এর মধ্যে পার্থক্য কী?
 
-3. Get 🛍️ Products by Category
-```bash
-https://fakestoreapi.com/products/category/${category}
-```
+== (Loose Equality): এটি শুধুমাত্র ভ্যালু বা মান চেক করে। যদি দুটি ভ্যালুর ডাটা টাইপ আলাদা হয়, তবে এটি টাইপ কনভার্সন (coercion) করে তাদের সমান করার চেষ্টা করে। (যেমন: 5 == '5' সত্য হবে)।
 
-Example:
-```bash
-https://fakestoreapi.com/products/category/jewelery
-```
+=== (Strict Equality): এটি ভ্যালু এবং ডাটা টাইপ (data type) দুটোই চেক করে। টাইপ আলাদা হলে এটি মিথ্যা রিটার্ন করবে। (যেমন: 5 === '5' মিথ্যা হবে কারণ একটি নাম্বার এবং অন্যটি স্ট্রিং)।
 
-4. Get 🛍️ Single Product Detail
-```bash
-https://fakestoreapi.com/products/${id}
-```
+৪) API ডাটা ফেচ করার ক্ষেত্রে async/await এর গুরুত্ব কী?
+API থেকে ডাটা আসা একটি সময়সাপেক্ষ কাজ (asynchronous operation)। async/await ব্যবহার করলে আমরা asynchronous কোডকে synchronous বা সাধারণ কোডের মতো ধারাবাহিকভাবে লিখতে পারি। এটি .then() চেইনিং-এর জটিলতা কমায় এবং কোড পড়া ও ডিবাগ করা অনেক সহজ করে দেয়। এটি মূলত Promise হ্যান্ডেল করার একটি আধুনিক ও পরিষ্কার উপায়।
 
-Example:
-```bash
-https://fakestoreapi.com/products/1
-```
+৫) জাভাস্ক্রিপ্টে Scope এর ধারণা ব্যাখ্যা করুন (Global, Function, Block)।
+Scope নির্ধারণ করে কোডের কোথায় কোন ভেরিয়েবল এক্সেস বা ব্যবহার করা যাবে।
 
----
+Global Scope: ফাংশন বা ব্লকের বাইরে ডিক্লেয়ার করা ভেরিয়েবল হলো গ্লোবাল। এগুলো কোডের যেকোনো জায়গা থেকে ব্যবহার করা যায়।
 
-## 🎯 Project Specifications (UI/UX)
+Function Scope: কোনো ফাংশনের ভেতরে ডিক্লেয়ার করা ভেরিয়েবল (var, let, বা const দিয়ে) শুধুমাত্র ওই ফাংশনের ভেতরেই ব্যবহার করা যায়। ফাংশনের বাইরে এগুলো কাজ করে না।
 
-#### 1) Navbar
-- Website **logo/name** ("SwiftCart") on the **left**
-- **Menu items** (Home, Products, About, Contact) in the **center**
-- **Cart Icon/Button** on the **right** (showing item count is a bonus)
-
-#### 2) Banner / Hero Section
-- A **background image** (related to shopping/fashion/electronics)
-- A **title** (e.g., "Best Collection For You") and **subtitle**
-- A **centered button** (e.g., "Shop Now")
-
-#### 3) Features / Why Choose Us
-- **Section heading**
-- **3-4 items** highlighting features like "Fast Delivery", "24/7 Support", "Secure Payment", etc. (Icon + Title + Short Text)
-
-#### 4) Trending / Top Rated Section
-- Show **3 top-rated products** (you can filter by rating or just pick the first 3) based on API data or hardcoded for layout practice.
-
-#### 5) Newsletter & Footer
-- **Newsletter Subscription Form**: Email input + Subscribe button.
-- **Footer** with copyright info, social links, and quick links.
-
-#### 6) Responsiveness
-- Website must be **mobile responsive** 
-
----
-#### 7) Create a README file to answer the following questions-
-
-> **⚠️ Warning:** Do not use any AI tools to answer these questions. You must write the answers in **Bangla**.
-
-#### 1) What is the difference between `null` and `undefined`?
-
-#### 2) What is the use of the `map()` function in JavaScript? How is it different from `forEach()`?
-
-#### 3) What is the difference between `==` and `===`?
-
-#### 4) What is the significance of `async`/`await` in fetching API data?
-
-#### 5) Explain the concept of Scope in JavaScript (Global, Function, Block).
-
-## ⚡ Dynamic Features & Functionalities
-
-1) Category Loading
-Load Product Categories dynamically on the UI (e.g., as filter buttons or a dropdown).
-
-2) Category Click → Product Data
-On clicking a category: load products of that specific category.
-Display in a grid layout (e.g., 3 or 4 columns).
-
-3) Card Contents
-Each product card must include:
-- **Image** (from API)
-- **Title** (truncated if too long)
-- **Price** ($ value)
-- **Category** (badge or text)
-- **Rating** (Visualize stars or just show the number)
-- **Details Button**
-- **Add to Cart button**
-
-4) Modal on "Details" Click
-Clicking the "Details" button on a card opens a modal with full product details:
-- Full Title
-- Full Description
-- Price & Rating
-- "Buy Now" or "Add to Cart" button in modal.
-
-## 🧪 Challenges (Optional)
-
-    1) Add to Cart Interaction
-    Clicking "Add to Cart":
-    - Adds the product to a Cart list/array.
-    - Updates a Cart Count in the Navbar.
-    - (Optional) Persist in LocalStorage.
-
-    2) Cart Calculation
-    Show a summary (maybe in a sidebar or a separate section/modal) that lists added items and calculates the **Total Price**.
-
-    3) Remove from Cart
-    Ability to remove an item from the cart and update the Total Price instantly.
-
-    4) Loading Spinner
-    Show a loading spinner or skeleton loader while fetching data from the API.
-
-    5) Active State
-    Highlight the currently selected category button.
-
-🧰 Technology Stack:
-    HTML
-    CSS (Vanilla / Tailwind / DaisyUI)
-    JavaScript (Vanilla only, no frameworks like React/Vue for this assignment)
-
-📌 Rules
-✅ At least 5 meaningful commits
-❌ No dummy text where real data can be shown.
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE
-- **GitHub Repository:** YOUR_REPO_URL_HERE
-
-
-### 📅 Deadline For 60 marks: 17th February, 2026 (11:59 pm ⏱️)
-- Note: There won't be any 50 or 30 marks submission deadline. Only 60 marks submission deadline. After 17th February, 2026 (11:59 pm ⏱️) no submission will be accepted.
+Block Scope: {} বা কারলি ব্র্যাকেটের ভেতরে (যেমন if কন্ডিশন বা for লুপের বডি) let বা const দিয়ে ডিক্লেয়ার করা ভেরিয়েবল শুধু ওই ব্লকের ভেতরেই সীমাবদ্ধ থাকে। তবে var দিয়ে ডিক্লেয়ার করলে তা ব্লক স্কোপ মানে না।
